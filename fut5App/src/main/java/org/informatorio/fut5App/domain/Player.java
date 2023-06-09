@@ -7,14 +7,17 @@ public class Player {
     private String name;
     private String surname;
     private int height;
-    private String position;
+    private Position position;
     private int numberOfGoals;
     private int numberOfMatches;
     private boolean isCaptain;
     private int shirtNumber;
     private Team team;
 
-    public Player(UUID id, String name, String surname, int height, String position, int numberOfGoals, int numberOfMatches, boolean isCaptain, int shirtNumber, Team team) {
+    public Player() {
+    }
+
+    public Player(UUID id, String name, String surname, int height, Position position, int numberOfGoals, int numberOfMatches, boolean isCaptain, int shirtNumber, Team team) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -59,11 +62,11 @@ public class Player {
         this.height = height;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 
@@ -107,12 +110,19 @@ public class Player {
         this.team = team;
     }
 
-    //others methods
-    public void goalCounter() {
-        numberOfGoals++;
-    }
-
-    public void matchCounter() {
-        numberOfMatches++;
+    @Override
+    public String toString() {
+        return "Player{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", height=" + height +
+                ", position=" + position +
+                ", numberOfGoals=" + numberOfGoals +
+                ", numberOfMatches=" + numberOfMatches +
+                ", isCaptain=" + isCaptain +
+                ", shirtNumber=" + shirtNumber +
+                ", team=" + team +
+                '}';
     }
 }

@@ -1,20 +1,25 @@
 package org.informatorio.fut5App.domain;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
     private String name;
-    private Date creationDate;
+    private LocalDate creationDate;
     private List<Player> players = new ArrayList<>();
     private Coach coach;
+    private Player captain;
 
-    public Team(String name, Date creationDate, List<Player> players, Coach coach) {
+    public Team() {
+    }
+
+    public Team(String name, LocalDate creationDate, List<Player> players, Coach coach, Player captain) {
         this.name = name;
         this.creationDate = creationDate;
         this.players = players;
         this.coach = coach;
+        this.captain = captain;
     }
 
     public String getName() {
@@ -25,11 +30,11 @@ public class Team {
         this.name = name;
     }
 
-    public Date getCreationDate() {
+    public LocalDate getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -47,5 +52,24 @@ public class Team {
 
     public void setCoach(Coach coach) {
         this.coach = coach;
+    }
+
+    public Player getCaptain() {
+        return captain;
+    }
+
+    public void setCaptain(Player captain) {
+        this.captain = captain;
+    }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "name='" + name + '\'' +
+                ", creationDate=" + creationDate +
+                ", players=" + players +
+                ", coach=" + coach +
+                ", captain=" + captain +
+                '}';
     }
 }
