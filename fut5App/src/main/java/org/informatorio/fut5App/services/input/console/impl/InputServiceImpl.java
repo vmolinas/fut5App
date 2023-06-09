@@ -1,6 +1,5 @@
 package org.informatorio.fut5App.services.input.console.impl;
 
-import org.informatorio.fut5App.services.input.console.InputServiceInterface;
 import org.informatorio.fut5App.services.validations.ValidationService;
 import org.informatorio.fut5App.services.validations.impl.ValidationServiceImpl;
 
@@ -8,7 +7,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class InputServiceImpl implements InputServiceInterface {
+public class InputServiceImpl {
     public static Scanner scanner;
     public static final ValidationService validate = new ValidationServiceImpl();
     public static String consoleInput(String console){
@@ -55,14 +54,14 @@ public class InputServiceImpl implements InputServiceInterface {
         } while (keepOn);
         return returnDate;
     }
-    @Override
-    public void createScanner() {
+//    @Override
+    public static void createScanner() {
         if(scanner == null){
             scanner = new Scanner(System.in);
         }
     }
 
-    @Override
+//    @Override
     public Scanner getScanner() {
         if (scanner == null) {
             scanner = new Scanner(System.in);
@@ -70,7 +69,7 @@ public class InputServiceImpl implements InputServiceInterface {
         return scanner;
     }
 
-    @Override
+//    @Override
     public void closeScanner() {
         if(scanner != null){
             scanner.close();

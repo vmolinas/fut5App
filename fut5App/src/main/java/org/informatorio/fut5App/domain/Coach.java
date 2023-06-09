@@ -4,14 +4,16 @@ public class Coach {
     private String name;
     private String surname;
     private int age;
+    private Team team;
 
     public Coach() {
     }
 
-    public Coach(String name, String surname, int age) {
+    public Coach(String name, String surname, int age, Team team) {
         this.name = name;
         this.surname = surname;
         this.age = age;
+        this.team = team;
     }
 
     public String getName() {
@@ -38,12 +40,21 @@ public class Coach {
         this.age = age;
     }
 
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
     @Override
     public String toString() {
         return "Coach{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
+                ", team=" + team +
                 '}';
     }
 }

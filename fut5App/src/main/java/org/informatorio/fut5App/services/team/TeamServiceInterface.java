@@ -8,4 +8,5 @@ public interface TeamServiceInterface {
     Team createTeam();
     void teamList(List<Team> teams);
     List<Team> searchTeam(List<Team> teams);
+    void deleteTeam(Team team);
 }

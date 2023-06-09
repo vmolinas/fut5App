@@ -5,4 +5,6 @@ import org.informatorio.fut5App.domain.Team;
 
 public interface PlayerServiceInterface {
     Player createPlayer(Team team);
+
+    void createPlayer();
 }
